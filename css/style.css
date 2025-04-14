@@ -24,6 +24,7 @@ body {
 .content {
   margin-top: 100px; /* Add a margin equal to the height of the fixed div */
   padding: 20px;
+  width: 100% !important;
   /* width: 1200px !important; */
 }
 
