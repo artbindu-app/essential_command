@@ -1,6 +1,6 @@
 <!-- # ADB related commands -->
 ➤ Install ADB - [Link](https://developer.android.com/tools/releases/platform-tools)<br>
-➤ [How to🔨uninstall default unused android application📲](https://medium.com/@artbindu/how-to-uninstall-default-unused-android-application-29780f33eba4)
+➤ Blog: [How to🔨uninstall default unused android application📲](https://medium.com/@artbindu/how-to-uninstall-default-unused-android-application-29780f33eba4)
 
 Command | Description
 ------- | --------
@@ -15,10 +15,11 @@ Command | Description
 `adb logcat -c` | clear all logs in adb terminal
 `adb logcat > <fileName>.<extension>` | store device log into a file
 `adb logcat > "<path>/<fileName>.<extension>` | store device log into a specific directory
+`adb logcat chromium:D SystemWebViewClient:D *:s` | View Chromecast Device Log
 `adb -s <device_id or ip> install "<apk_file_path>/<apkFileName>.apk"` | install any apk from PC to device
 `adb -s <device_id or ip> uninstall <native_app_id>` | Uninstall the device app
 `adb shell pm uninstall -k --user 0 <package name>` | Forcefully uninstall
-`adb -s <device_id/only_ip> reboot` | restart device
+`adb -s <device_id/only_ip> reboot` | restart device through adb
 `adb shell pm list packages` | Show all install packages in your system
 `adb shell pm list packages \| findstr <OEM/Carrier/App Name>` <br>or<br> `adb shell pm list packages \| grep <OEM/Carrier/App Name>` | adb show app list under a specific packages
 `adb shell getprop` | get connected system properties
