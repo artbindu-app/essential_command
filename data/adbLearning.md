@@ -1,6 +1,8 @@
 <!-- # ADB related commands -->
+➤ Install ADB - [Link](https://developer.android.com/tools/releases/platform-tools)<br>
+➤ [How to🔨uninstall default unused android application📲](https://medium.com/@artbindu/how-to-uninstall-default-unused-android-application-29780f33eba4)
 
-[Command](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands) | Description
+Command | Description
 ------- | --------
 `adb --version` | View adb version
 `adb devices` | see list of connected devices through adb
