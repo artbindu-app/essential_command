@@ -68,4 +68,7 @@
 `Command + Option + Esc` | brings up a menu to help you force an app to quit
 `Command + Tab` | open the app switcher. Keep Command held down and press Tab repeatedly to scroll through apps. Release both buttons to confirm selection
 `Command + Space bar` | open Spotlight search bar
-
+**`Brew Setup in Mac`** |
+`brew help` | get brew info
+`brew config` | get brew config info
+[`View Homebrew docs`](https://brew.sh/) | install homebrew, view docs and follow accordingly
