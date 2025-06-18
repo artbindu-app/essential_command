@@ -1,4 +1,4 @@
-# [Website](https://artbindu.github.io/essential_command/)
+# [Website](https://artbindu-app.github.io/essential_command/)
 
 
 # About the project
@@ -10,7 +10,7 @@
 
 <br><br><br><br><br>
 
-**Maintenance By: [<img width="15px" padding="1px" src="https://cdn.simpleicons.org/github/F81F7E"/>](https://github.com/artbindu) [Biswasindhu Mandal <img width="18px" padding="1px" src="./favicon.ico"/>](https://artbindu.github.io/artbindu/index.html)** 
+**Maintenance By: [<img width="15px" padding="1px" src="https://cdn.simpleicons.org/github/F81F7E"/>](https://github.com/artbindu) [Biswasindhu Mandal <img width="18px" padding="1px" src="./favicon.ico"/>](https://artbindu-app.github.io/whoami/index.html)** 
 &nbsp;&nbsp; 
 
 **Supported By: [<img width="15px" backgroundColor="black" padding="1px" src="https://cdn.simpleicons.org/github/red"/>](https://github.com/SubhadeepGiri) Subhadeep Giri**<br>
