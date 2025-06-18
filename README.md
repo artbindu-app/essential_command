@@ -5,6 +5,7 @@
 ### This is Essential Command Learning Website for Windows, Linux, Mac, ADB and Git
 
 # How to run project
+
  - `npm i`
  - `npm run start`
 

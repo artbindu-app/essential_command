@@ -7,7 +7,7 @@
 
 </br></br>
 <!-- <div style="margin:auto;padding:1px;max-width:70px">
-    <a href="https://github.com/artbindu" target="_blank"><img align="middle" src="https://artbindu-app.github.io/whoami/favicon.ico"></a> -->
+    <a href="https://github.com/artbindu" target="_blank"><img align="middle" src="https://artbindu-app.github.io/artbindu/favicon.ico"></a> -->
 </div>
 </br></br>
 
