@@ -6,6 +6,7 @@
 
 ➤ Install ADB - [Link](https://developer.android.com/tools/releases/platform-tools)<br>
 ➤ Blog: [How to🔨uninstall default unused android application📲](https://medium.com/@artbindu/how-to-uninstall-default-unused-android-application-29780f33eba4)
+➤ [ADB Installation in MAC](https://formulae.brew.sh/cask/android-platform-tools): `brew install --cask android-platform-tools`
 
 ### ADB Powerful command
 
