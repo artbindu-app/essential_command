@@ -47,7 +47,7 @@ Media Configuration |
 Up-Down Volume through ADB |
 `adb shell media volume --get`| Get Current volume Info<br>It will show you current volume value & actual volume range like: [0:10]
 `adb shell media volume --show  --set <volume value>`| Set Volume with in about volume range
-`adb shell input keyevent <event_code>` | Triggered android/remote [key event](./data/rawData/keyevents.json) - [Android KeyEvents](https://developer.android.com/reference/android/view/KeyEvent)
+`adb shell input keyevent <event_code>` | Triggered android/remote  <a href="./data/rawData/keyevents.json" target="_blank"> key event </a> - <a href="https://developer.android.com/reference/android/view/KeyEvent" target="_blank"> Android KeyEvents </a>
 
 
 
