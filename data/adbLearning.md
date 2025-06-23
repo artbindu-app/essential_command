@@ -5,7 +5,7 @@
 ### Basic Of ADB
 
 ➤ Install ADB - [Link](https://developer.android.com/tools/releases/platform-tools)<br>
-➤ Blog: [How to🔨uninstall default unused android application📲](https://medium.com/@artbindu/how-to-uninstall-default-unused-android-application-29780f33eba4)
+➤ Blog: [How to🔨uninstall default unused android application📲](https://medium.com/@artbindu/how-to-uninstall-default-unused-android-application-29780f33eba4)<br>
 ➤ [ADB Installation in MAC](https://formulae.brew.sh/cask/android-platform-tools): `brew install --cask android-platform-tools`
 
 ### ADB Powerful command
@@ -14,10 +14,11 @@ Command | Description
 ------- | --------
 `adb --version` | View adb version
 `adb devices` | see list of connected devices through adb
-`adb connect <ip>:<port>` | connect devices through ip
+`adb connect <ip>:<port>` | connect devices through ip (default port: 5555)
 `adb connect <device_id>` | connect devices through USB
 `adb kill-server`| disconnect all connected devices
 `adb start-server` | adb restart server
+`adb tcp <tcp port>` | Reset tcp port: 5555 (default)
 `adb usb` | Restarting the USB Mode
 `adb logcat` | show device log
 `adb logcat -c` | clear all logs in adb terminal
@@ -35,6 +36,10 @@ Command | Description
 `adb shell getprop ro.build.version.sdk`| Get Device SDK version
 `adb shell getprop ro.serialno` | get serial number
 `adb shell getprop \| findstr ro.product` | Get all product information
+`adb shell` + `↵` + `echo $SHELL` | get current shell (if `adb shell getprop` not work)
+`adb shell` + `↵` + `whoami` | get current user (if `adb shell getprop` not work)
+`adb shell` + `↵` + `printenv` + `↵` + `echo $PATH` | get environment variable & path (if `adb shell getprop` not work)
+`adb shell` + `↵` + `uname -a` | System details (if `adb shell getprop` not work)
 `adb shell input text "<input_text>"` | Input text from remote device
 `adb remount`| put `/system` partition in writable mode. By default `/system` is only readable. It could only be done on rooted device.
 Media Configuration |
