@@ -4,16 +4,13 @@
 
 [Command](https://support.apple.com/en-in/HT201236) | Description
 ------- | --------
-**`.jar file`**|
-`jar xf <file_name>.jar`| Break/Expanding jar file
-`jar -cvf <file_name>.jar <target_directory_name>/*`| Create jar file of a directory
-**`Cut, Copy and Paste `** | 
+**`Shortcuts: Cut, Copy and Paste `** | 
 `Command + C` | copies any highlighted content to the Mac's Clipboard
 `Command + V` | pastes the Clipboard's contents
 `Command + Shift + V` | pastes without formatting
 `Command + X` | cuts (i.e. erases) any highlighted content and copies it to the Mac's clipboard
 `Command + A` | selects all items or content on a page
-**`Formatting or editing your text`**|
+**`Shortcuts: Formatting or editing your text`**|
 `Command + B` | bold lettering
 `Command + I` | italics
 `Command + U` | underline
@@ -22,7 +19,7 @@
 `Control + K` | delete all text between cursor and end of paragraph or line
 `Command + Control + Space bar` | open Character Viewer window (which lets you choose and type emojis)
 `Command + K` | add a hyperlink to highlighted text
-**`Finding a word`** |
+**`Shortcuts: Finding a word`** |
 `Command + F`| to open the word finder.
 `Command + F` | find specific words in your document
 `Command + semi-colon (;)` | find misspelled words. 
@@ -34,7 +31,7 @@
 `Fn + Left/Right Arrow` | jump to beginning/end of document
 `Command + Up/Down Arrow` | move cursor to beginning/end of document. Note (not available on Microsoft Word)
 `Command + Left/Right Arrow` | move cursor to beginning/end of line
-**`Saving, printing and opening new documents`**|
+**`Shortcuts: Saving, printing and opening new documents`**|
 `Command + S` | save your document (do this often even while writing)
 `Command + O` | open a document saved to your Mac
 `Command + P` | print your document
@@ -72,3 +69,14 @@
 `brew help` | get brew info
 `brew config` | get brew config info
 [`View Homebrew docs`](https://brew.sh/) | install homebrew, view docs and follow accordingly
+**`.jar file`**|
+`jar xf <file_name>.jar`| Break/Expanding jar file
+`jar -cvf <file_name>.jar <target_directory_name>/*`| Create jar file of a directory
+**`Directory: Create/Delete**| **Terminal Command**
+`mkdir <path>/<directory_name>`  | Create DIrectory
+`rm -Rf <path>/<directory_name>` | Delete Directory
+`` | Copy Directory
+`` | Move Directory
+`` | Rename Directory
+
+
