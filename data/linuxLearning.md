@@ -18,7 +18,8 @@ Command | Description
 `cd ..` | go up to parent directory
 `cd subdir` | change to subdirectory subdir.
 `ls -l` | list content with details.
-`ls -a` | list content including hidden files.
+`ls -a` | Show all contents with hidden items
+`ls -l -a` | list content including hidden files.
 `cp src dest`| copy src file to dest file.
 `cp -r sDir dDir` | copy “recursively” sDir directory todDir directory.
 `rm -r dirName` | removes directory recursively.
