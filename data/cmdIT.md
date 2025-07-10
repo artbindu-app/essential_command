@@ -13,7 +13,7 @@
 |  
 **`2. System Info`** |
 `ipconfig` | ipdetails [IPv4 Address / Default Gateway]
-`ipconfig getifaddr en0` | Mac :: ipdetails [IPv4 Address / Default Gateway]
+`ipconfig getifaddr en0` <br> `ipconfig getifaddr en5` | Mac :: ipdetails (WIFI) [IPv4 Address / Default Gateway] <br> Mac :: ipdetails (LAN) [IPv4 Address / Default Gateway]
 `win + r` + `dxdiag` | get all of your system info
 `whoami` | see current user id
 `perfmon /report` | system report
