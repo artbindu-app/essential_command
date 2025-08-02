@@ -1,3 +1,173 @@
+/* Add gap between nav-title image and text */
+#myList li a img {
+  margin-right: 0.5em;
+}
+
+@media (max-width: 600px) {
+  #myList li a img {
+    margin-right: 0;
+  }
+}
+/* Make nav-title text black when active */
+#myList li.active .nav-title {
+  color: #111;
+}
+/* Make main content scrollable with fixed header */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.fixed-div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+main.content#showData {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  padding-top: 7.5em; /* Adjust based on header height */
+  box-sizing: border-box;
+  background: #fafbfc;
+}
+
+@media (max-width: 600px) {
+  main.content#showData {
+    padding-top: 8.5em;
+  }
+}
+/* Fix overlap between nav and page header */
+#myList {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0;
+}
+.page-header {
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+@media (max-width: 900px) {
+  #myList {
+    margin-bottom: 0;
+  }
+  .page-header {
+    margin-top: 0;
+    margin-bottom: 0.3em;
+  }
+}
+/* Page Header Styles */
+.page-header {
+  text-align: center;
+  margin: 0;
+  padding: 0.7em 0 0.7em 0;
+  background: #222;
+  color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+.header-title {
+  font-size: 2.1em;
+  font-weight: 700;
+  margin: 0;
+  padding: 0.2em 0;
+  letter-spacing: 1px;
+}
+.msg {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 400;
+  background: none;
+  color: #fff;
+  padding: 0.1em 0.5em;
+  border-radius: 0.3em;
+  word-break: break-word;
+}
+@media (max-width: 600px) {
+  .header-title {
+    font-size: 1.2em;
+    padding: 0.3em 0.2em;
+  }
+  .msg {
+    font-size: 0.95em;
+    padding: 0.1em 0.2em;
+  }
+  .page-header {
+    padding: 0.3em 0 0.3em 0;
+  }
+}
+/* Enhanced responsive navigation bar item padding and spacing */
+#myList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.2em;
+  padding: 0.2em 0.5em;
+  margin: 0;
+  list-style: none;
+}
+#myList li {
+  margin: 0 0.1em;
+}
+#myList li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: 0.4em;
+  transition: background 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+#myList li a:hover, #myList li.active a {
+  background: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+  #myList {
+    gap: 0.1em;
+    padding: 0.1em 0.2em;
+  }
+  #myList li {
+    margin: 0 0.05em;
+  }
+  #myList li a {
+    padding: 7px 4px;
+    min-width: 0;
+  }
+}
+/* Responsive navigation bar item padding */
+#myList li a {
+  padding: 10px 18px;
+}
+
+@media (max-width: 600px) {
+  #myList li a {
+    padding: 8px 6px;
+  }
+}
+/* Navigation icon-title responsive styles */
+#myList a .nav-title {
+  display: inline;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  #myList a .nav-title {
+    display: none;
+  }
+}
 body {
   box-sizing: border-box;
   min-width: 200px;
@@ -31,7 +201,7 @@ body {
 ul {
   list-style-type: none;
   padding: 0;
-  background-color:  #093969 ;
+  background-color:  rgb(94, 1, 103) ;
   top: 0;
   left: 0;
   width: 100%;

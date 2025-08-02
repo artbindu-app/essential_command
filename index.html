@@ -33,83 +33,72 @@
 </head>
 
 <body>
-  <div class="fixed-div">
+  <header class="fixed-div">
     <ul id="myList">
       <li><a href="#windows">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg" />
-          Windows</a>
+          <img align="center" width="20px" src="https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg" />
+          <span class="nav-title">Windows</span></a>
       </li>
       <li><a href="#windows-it">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.worldvectorlogo.com/logos/terminal-1.svg" />
-          Windows-IT</a>
+          <img align="center" width="20px" src="https://cdn.worldvectorlogo.com/logos/terminal-1.svg" />
+          <span class="nav-title">Windows-IT</span></a>
       </li>
       <li><a href="#linux">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.simpleicons.org/linux" />
-          Linux</a>
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/linux" />
+          <span class="nav-title">Linux</span></a>
       </li>
       <li><a href="#macos">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.simpleicons.org/apple/white" />
-          MacOs</a>
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/apple/white" />
+          <span class="nav-title">MacOs</span></a>
       </li>
       <li><a href="#git">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.simpleicons.org/git/red" />
-          Git</a>
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/git/red" />
+          <span class="nav-title">Git</span></a>
       </li>
       <li><a href="#adb">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.simpleicons.org/android/green" />
-          Adb</a>
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/android/green" />
+          <span class="nav-title">Adb</span></a>
       </li>
       <li><a href="#docker">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.simpleicons.org/docker" />
-          Docker</a>
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/docker" />
+          <span class="nav-title">Docker</span></a>
       </li>
       <li><a href="#ffmpeg">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.simpleicons.org/ffmpeg" />
-          FFmpeg</a>
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/ffmpeg" />
+          <span class="nav-title">FFmpeg</span></a>
       </li>
-      <!-- <li><a href="#shellscript">
-          <img align="center" width="20px" style="padding:5px;" src="https://cdn.simpleicons.org/gnubash/white" />
-          Shell Script</a>
-      </li> -->
-      <!-- <li><a href="#batchscript">
-          <img align="center" width="20px" style="padding:5px;" src="https://cdn.simpleicons.org/gnubash/white" />
-          Batch Script</a>
-      </li> -->
-      <!-- <li><a href="#powershell">
-        <img align="center" width="20px" style="padding:5px;" src="https://cdn.simpleicons.org/powershell" />
-        Power Shell</a>
-      </li> -->
-      <!-- <li><a href="#database">
-          <img align="center" width="20px" style="padding:5px;" src="https://cdn.simpleicons.org/amazondocumentdb" />
-          Database</a>
-      </li>  -->
-      <!-- <li><a href="#plpgsql">
-        <img align="center" width="20px" style="padding:5px;" src="https://cdn.simpleicons.org/postgresql/sky" />
-        PLpgSQL</a>
-      </li>  -->
-      <!-- <li style="float:right"><a href="#about">About</a></li> -->
+      <li><a href="#shellscript">
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/gnubash/white" />
+          <span class="nav-title">Shell Script</span></a>
+      </li>
+      <li><a href="#batchscript">
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/gnubash/white" />
+          <span class="nav-title">Batch Script</span></a>
+      </li>
+      <li><a href="#powershell">
+        <img align="center" width="20px" src="https://cdn.simpleicons.org/powershell" />
+        <span class="nav-title">Power Shell</span></a>
+      </li>
+      <li><a href="#database">
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/amazondocumentdb" />
+          <span class="nav-title">Database</span></a>
+      </li> 
+      <li><a href="#plpgsql">
+        <img align="center" width="20px" src="https://cdn.simpleicons.org/postgresql/sky" />
+        <span class="nav-title">PLpgSQL</span></a>
+      </li>
       <li style="float:right"><a href="#about">
-          <img align="center" src="https://artbindu-app.github.io/whoami/favicon.ico" height="25px"
-            style="padding:5px;">About</a>
+          <img align="center" src="https://artbindu-app.github.io/whoami/favicon.ico" height="25px">
+           <span class="nav-title">About</span></a>
       </li>
     </ul>
-    <header class="page-header">
-      <h1><u>
-          <div class="msg">Windows Popular Command</div>
-        </u></h1>
-    </header>
+    <div class="page-header">
+      <h1 class="header-title"><span class="msg">Windows Popular Command</span></h1>
+    </div>
     <!-- Your fixed div content goes here -->
-  </div>
+  </header>
 
-  <div class="content" id="showData">
+  <main class="content" id="showData">
     <div class="windows">
       <zero-md class="app" src="./data/cmdLearning.md"></zero-md>
     </div>
@@ -152,7 +141,7 @@
     <div class="ffmpeg">
       <zero-md class="app" src="./data/ffmpeg.md"></zero-md>
     </div>
-  </div>
+  </main>
 
   <script>
     var msgData = {
