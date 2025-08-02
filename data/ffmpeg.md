@@ -20,7 +20,7 @@ Command | Description
 `ffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset medium output.mp4` | Change video codecs of a video <br> -c:v libx264 → Encodes video to H.264 <br> -crf 23 → Frame Rate (lower = better quality; range: 18–28),<br> -preset medium → encoding speed vs compression efficiency (ultrafast, fast, medium, slow)
 `ffmpeg -i input.mkv -c:v copy -c:a aac -b:a 192k output.mp4` | Change audio codecs of a video <br> -c:a aac → Converts audio to AAC,<br> -b:a 192k → Audio bitrate
 `ffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 192k output.mp4` | Change both video & audio codecs <br> -c:v libx264 → Encodes video to H.264 <br> -crf 23 → Frame Rate (lower = better quality; range: 18–28),<br> -preset medium → encoding speed vs compression efficiency (ultrafast, fast, medium, slow),<br> -c:a aac → Converts audio to AAC,<br> -b:a 192k → Audio bitrate
-Crete test file 'videoList.txt' with info as : `file input1.mp4 ↵ file input2.mp4` <br> `ffmpeg -f concat -safe 0 -i videolist.txt -c copy output.mp4` | Merge multiple video with same configuration
+Create test file 'videoList.txt' with info as : `file input1.mp4 ↵ file input2.mp4` <br> `ffmpeg -f concat -safe 0 -i videolist.txt -c copy output.mp4` | Merge multiple video with same configuration
 `ffmpeg -i input.mp4 -vf reverse -an reversed_video.mp4` | Reverse video only
 `ffmpeg -i input.mp4 -af areverse -vn reversed_audio.mp4` | Reverse audio only
 `ffmpeg -i input.mp4 -vf reverse -af areverse reversed.mp4` | Reverse Video & Audio only
