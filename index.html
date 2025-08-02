@@ -10,7 +10,8 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="canonical" href="https://zerodevx.github.io/zero-md/">
   <meta name="description" content="essential-command">
-  <meta name="keywords" content="git, adb, adb-commands, cmd, linux-commands, windows-cmd, windows-commands, git-commands, mac-commands, it-commands, database, sql, plpgsql, plsql, sql-query">
+  <meta name="keywords"
+    content="git, adb, adb-commands, cmd, linux-commands, windows-cmd, windows-commands, git-commands, mac-commands, it-commands, database, sql, plpgsql, plsql, sql-query">
   <meta name="robots" content="INDEX, FOLLOW">
 
   <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.2.10/webcomponents-loader.min.js"></script>
@@ -22,10 +23,10 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'UA-66946548-3');
-    window.onload= (event) => {
+    window.onload = (event) => {
       setTimeout(() => {
         // document.getElementsByClassName("content")[0].style.backgroundColor = 'red';
-        document.getElementsByClassName("content")[0].style.width = `${Math.ceil(window.innerWidth*50/100)}px`;
+        document.getElementsByClassName("content")[0].style.width = `${Math.ceil(window.innerWidth * 50 / 100)}px`;
       }, 500);
     }
   </script>
@@ -37,7 +38,7 @@
     <ul id="myList">
       <li class="about-link"><a href="#about">
           <img align="center" src="https://artbindu-app.github.io/whoami/favicon.ico" height="25px">
-           <span class="nav-title">About</span></a>
+          <span class="nav-title">About</span></a>
       </li>
       <li><a href="#windows">
           <img align="center" width="20px" src="https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg" />
@@ -80,16 +81,16 @@
           <span class="nav-title">Batch Script</span></a>
       </li>
       <li><a href="#powershell">
-        <img align="center" width="20px" src="https://cdn.worldvectorlogo.com/logos/powershell.svg" />
-        <span class="nav-title">Power Shell</span></a>
+          <img align="center" width="20px" src="https://cdn.worldvectorlogo.com/logos/powershell.svg" />
+          <span class="nav-title">Power Shell</span></a>
       </li>
       <li><a href="#database">
           <img align="center" width="20px" src="https://cdn.worldvectorlogo.com/logos/amazon-database.svg" />
           <span class="nav-title">Database</span></a>
-      </li> 
+      </li>
       <li><a href="#plpgsql">
-        <img align="center" width="20px" src="https://cdn.simpleicons.org/postgresql/sky" />
-        <span class="nav-title">PLpgSQL</span></a>
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/postgresql/sky" />
+          <span class="nav-title">PLpgSQL</span></a>
       </li>
     </ul>
     <div class="page-header">
@@ -178,7 +179,7 @@
       listItems[0].classList.add('active')
       showData(activeOption);
     }
-      
+
 
     listItems.forEach(function (item) {
       item.addEventListener('click', function () {
