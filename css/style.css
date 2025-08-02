@@ -155,6 +155,12 @@ main.content#showData {
   padding: 0.2em 0.5em;
   margin: 0;
   list-style: none;
+  position: relative;
+}
+
+#myList .about-link {
+  margin-left: auto;
+  order: 99;
 }
 #myList li {
   margin: 0 0.1em;
@@ -239,7 +245,7 @@ body {
 ul {
   list-style-type: none;
   padding: 0;
-  background-color:  rgb(94, 1, 103) ;
+  background-color:  rgb(9, 57, 105);
   top: 0;
   left: 0;
   width: 100%;
@@ -300,8 +306,8 @@ li.dropdown {
   background-color: #770792;
   color: #123456;
   text-decoration: none;
-  /* padding: 2px; */
   font-weight: bold;
+  padding: 0 !important;
 }
 
 
