@@ -3,17 +3,23 @@
 Command | Description
 ------- | --------
 `ffmpeg -version` | get version
-`ffprobe -i input.mp4` | get media information
-`ffprobe -v quiet -print_format json -show_format -show_streams input.mp4` | Show media information in JSON format
-`ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 input.mp4` | media duration
+`ffprobe -i <filename>.<extension>` | get media information
+`ffmpeg -i <filename>.<extension> -hide_banner` | get metadata
+`ffprobe -v quiet -print_format json -show_format -show_streams <filename>.<extension>` | Show media information in JSON format
+`ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 <filename>.<extension>` | media duration
+`ffmpeg -i input.mp3 -af "volumedetect" -vn -sn -dn -f null -` | View Media Volume
+`ffmpeg -i input.mp4 -filter:a "volume=1.5" -c:v copy output.mp4` | Increase Volume by a Percentage
+`ffmpeg -i input.mp4 -filter:a "volume=5dB" -c:v copy output.mp4` | Increase Volume by Decibels
+FFmpeg (Audio) | 
+`ffmpeg -i input.mp3 -ss 00:00:30 -t 30 -c copy output.mp3` | trim audio
+FFmpeg (Video) | 
+------- | --------
 `ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 input.mp4` | Show Video Frame
 `ffmpeg -i input.mp4 -ss 00:01:00 -t 00:00:30 -c copy output.mp4` | trim video frame from start time to time range, trim data: 00:01:00-00:01:30
-`ffmpeg -i input.mp4 -ss 00:01:00 -to 00:01:30 -c copy output.mp4` | trime video frame between two position, trim data: 00:01:00-00:01:30
+`ffmpeg -i input.mp4 -ss 00:01:00 -to 00:01:30 -c copy output.mp4` | trim video frame between two position, trim data: 00:01:00-00:01:30
 `ffmpeg -i input.mp3 -ss 00:00:30 -to 00:01:00 -c copy output.mp3` | trim audio
-`ffmpeg -i input.mp3 -ss 00:00:30 -t 30 -c copy output.mp3` | trim audio
 `ffmpeg -i input.mp4 -vf "transpose=1" output.mp4` | rotate video, 90° clockwise
 `ffmpeg -i input.mp4 -vf "transpose=1,transpose=1,transpose=1" output.mp4` | rotate video, 270° clockwise
-`ffmpeg -i input.mp4 -hide_banner` | get metadata
 `ffmpeg -i input.mp4 -metadata title="New Title" -metadata artist="Artist Name" -c copy output.mp4` | Update video metadata
 `ffmpeg -i input.mp4 -ss <start_pos_in_sec> -t <duration_in_sec> -vf "crop=1080:1920" -c:a copy output.mp4` | Crop Video from Center of the Video Frame
 `ffmpeg -i input.mp4 -ss <start_pos_in_sec> -t <duration_in_sec> -vf "crop=1920:1080:(Video_width/3):(Video_Height/3)" -c:a copy output.mp4` | Crop Video from 1/3rd Position of Video Frame
@@ -27,9 +33,6 @@ Create test file 'videoList.txt' with info as : `file input1.mp4 ↵ file input2
 `ffmpeg -i input.mp4 -vn -acodec copy output_audio.aac` | Extract Audio from Video
 `ffmpeg -i input.mp4 -q:a 0 -map a output_audio.mp3` | Extract Audio and convert to `.mp3` audio
 `ffmpeg -i input_video.mp4 -i input_audio.mp3 -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 output.mp4` | Replace video audio with new audio
-`ffmpeg -i input.mp3 -af "volumedetect" -vn -sn -dn -f null -` | View Media Volume
-`ffmpeg -i input.mp4 -filter:a "volume=1.5" -c:v copy output.mp4` | Increase Volume by a Percentage
-`ffmpeg -i input.mp4 -filter:a "volume=5dB" -c:v copy output.mp4` | Increase Volume by Decibels
 `ffmpeg -i input.mp4 -filter:v "setpts=2.0*PTS" output.mp4` | Update video playback rate (0.5x)
 `ffmpeg -i input.mp4 -filter_complex "[0:v]setpts=2.0*PTS[v];[0:a]atempo=0.5[a]" -map "[v]" -map "[a]" output.mp4` | Update video playback rate (0.5x) sync with audi speed
 `ffmpeg -i input.mp4 -vf hflip output.mp4` | Horizontal flip
