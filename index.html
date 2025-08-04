@@ -72,7 +72,7 @@
           <img align="center" width="20px" src="https://cdn.simpleicons.org/ffmpeg" />
           <span class="nav-title">FFmpeg</span></a>
       </li>
-      <li><a href="#shellscript">
+      <!-- <li><a href="#shellscript">
           <img align="center" width="20px" src="https://cdn.simpleicons.org/gnubash/white" />
           <span class="nav-title">Shell Script</span></a>
       </li>
@@ -91,7 +91,7 @@
       <li><a href="#plpgsql">
           <img align="center" width="20px" src="https://cdn.simpleicons.org/postgresql/sky" />
           <span class="nav-title">PLpgSQL</span></a>
-      </li>
+      </li> -->
     </ul>
     <div class="page-header">
       <h1 class="header-title"><span class="msg">Windows Popular Command</span></h1>
@@ -174,12 +174,23 @@
         }
       });
     } else {
-      var activeOption = listItems[0].textContent ? listItems[0].textContent.replace(/\s+/g, '') : '';
-      console.log('Active option: [Default] ' + activeOption);
-      listItems[0].classList.add('active')
-      showData(activeOption);
+      // Set default to #windows
+      let defaultFound = false;
+      listItems.forEach((ele, index) => {
+        if (ele.querySelector('a') && ele.querySelector('a').getAttribute('href') === '#windows') {
+          var activeOption = ele.textContent ? ele.textContent.replace(/\s+/g, '') : '';
+          console.log('Active option: [Default] ' + activeOption);
+          ele.classList.add('active');
+          showData(activeOption);
+          defaultFound = true;
+        }
+      });
+      if (!defaultFound) {
+        var activeOption = listItems[0].textContent ? listItems[0].textContent.replace(/\s+/g, '') : '';
+        listItems[0].classList.add('active');
+        showData(activeOption);
+      }
     }
-
 
     listItems.forEach(function (item) {
       item.addEventListener('click', function () {
