@@ -39,7 +39,8 @@ Create test file 'videoList.txt' with info as : `file input1.mp4 ↵ file input2
 `ffmpeg -i input.mp4 -vf vflip output.mp4` | Vertical flip
 `ffmpeg -i input.mp4 -vf hflip,vflip output.mp4` | Horizontal & Vertical filp
 `ffmpeg -i input.mp4 -map 0:v -vf reverse -map 0:a -c:a copy output.mp4` | reverse video only (audio not reverse)
-`ffmpeg -i input.mp4 -c:v copy -an output.mp4` | Remove audio from video
+`ffmpeg -i input.mp4 -c:v copy -an output.mp4` | Remove audio from video (without re-encoding)
+`ffmpeg -i input.mp4 -an output.mp4` | Remove audio with Re-encode Video
 `ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -strict experimental output.mp4` | Merge audio & video
 `ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -shortest output.mp4` | Add audio with video (if audio is longer then auto trim)
 
