@@ -5,7 +5,7 @@ Command | Description
 `ffmpeg -version` | get version
 `ffprobe -i <filename>.<extension>` | get media information
 `ffmpeg -i <filename>.<extension> -hide_banner` | get metadata
-`ffprobe -v quiet -print_format json -show_format -show_streams <filename>.<extension>` | Show media information in JSON format
+`ffprobe -v quiet -print_format json -show_format -show_streams <filename>.<extension> > input.json` | Show media information in JSON format
 `ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 <filename>.<extension>` | media duration
 `ffmpeg -i input.mp3 -af "volumedetect" -vn -sn -dn -f null -` | View Media Volume
 `ffmpeg -i input.mp4 -filter:a "volume=1.5" -c:v copy output.mp4` | Increase Volume by a Percentage
@@ -43,6 +43,7 @@ Create test file 'videoList.txt' with info as : `file input1.mp4 ↵ file input2
 `ffmpeg -i input.mp4 -an output.mp4` | Remove audio with Re-encode Video
 `ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -strict experimental output.mp4` | Merge audio & video
 `ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -shortest output.mp4` | Add audio with video (if audio is longer then auto trim)
+`ffmpeg -f concat -safe 0 -i list.txt -c:v libx264 -c:a aac merged.mp4` | If clips differ slightly, re-encode during merge
 
 
 <!--
