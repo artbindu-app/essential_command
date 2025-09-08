@@ -43,6 +43,9 @@ Create test file 'videoList.txt' with info as : `file input1.mp4 ↵ file input2
 `ffmpeg -i input.mp4 -an output.mp4` | Remove audio with Re-encode Video
 `ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -strict experimental output.mp4` | Merge audio & video
 `ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -shortest output.mp4` | Add audio with video (if audio is longer then auto trim)
+`ffmpeg -codecs` | Supported video/audio codecs with decoding & encoding capacity <br>Decoding (D) and Encoding (E) capabilities <br>Audio (A), Video (V), Subtitle (S) types<br>Additional flags like Intra frame-only (I), Lossy (L), and Lossless (S)
+`ffmpeg -codecs | grep 'V'` |  Supported video only codecs
+`ffmpeg -codecs | grep 'A'` | Supported audio only codecs
 
 
 <!--
