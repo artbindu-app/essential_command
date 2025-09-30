@@ -5,6 +5,7 @@ Command | Description
 `ffmpeg -version` | get version
 `ffprobe -i <filename>.<extension>` | get media information
 `ffmpeg -i <filename>.<extension> -hide_banner` | get metadata
+`ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 input.mp4` | Media Resolution
 `ffprobe -v quiet -print_format json -show_format -show_streams <filename>.<extension> > input.json` | Show media information in JSON format
 `ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 <filename>.<extension>` | media duration
 `ffmpeg -i input.mp3 -af "volumedetect" -vn -sn -dn -f null -` | View Media Volume
@@ -15,6 +16,7 @@ FFmpeg (Audio) |
 FFmpeg (Video) | 
 ------- | --------
 `ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 input.mp4` | Show Video Frame
+`ffmpeg -i movie.mp4 -r 15 -c:v libx264 -crf 23 -preset fast -c:a aac -b:a 128k output.mp4` | Chage Video frame rate & reencode video/audio
 `ffmpeg -i input.mp4 -ss 00:01:00 -t 00:00:30 -c copy output.mp4` | trim video frame from start time to time range, trim data: 00:01:00-00:01:30
 `ffmpeg -i input.mp4 -ss 00:01:00 -to 00:01:30 -c copy output.mp4` | trim video frame between two position, trim data: 00:01:00-00:01:30
 `ffmpeg -i input.mp3 -ss 00:00:30 -to 00:01:00 -c copy output.mp3` | trim audio
@@ -33,7 +35,8 @@ Create test file 'videoList.txt' with info as : `file input1.mp4 ↵ file input2
 `ffmpeg -i input.mp4 -vn -acodec copy output_audio.aac` | Extract Audio from Video
 `ffmpeg -i input.mp4 -q:a 0 -map a output_audio.mp3` | Extract Audio and convert to `.mp3` audio
 `ffmpeg -i input_video.mp4 -i input_audio.mp3 -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 output.mp4` | Replace video audio with new audio
-`ffmpeg -i input.mp4 -filter:v "setpts=2.0*PTS" output.mp4` | Update video playback rate (0.5x)
+`ffmpeg -i input.mp4 -filter:v "setpts=(1/0.5)*PTS" output.mp4` | Update video playback rate (0.5x)
+`ffmpeg -i input.mp4 -filter:v "setpts=(1/1.5)*PTS" output.mp4` | Update video playback rate (1.5x)
 `ffmpeg -i input.mp4 -filter_complex "[0:v]setpts=2.0*PTS[v];[0:a]atempo=0.5[a]" -map "[v]" -map "[a]" output.mp4` | Update video playback rate (0.5x) sync with audi speed
 `ffmpeg -i input.mp4 -vf hflip output.mp4` | Horizontal flip
 `ffmpeg -i input.mp4 -vf vflip output.mp4` | Vertical flip
