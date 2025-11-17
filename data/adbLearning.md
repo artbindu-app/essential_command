@@ -31,6 +31,8 @@ Command | Description
 `adb -s <device_id/only_ip> reboot` | restart device through adb
 `adb shell pm list packages` | Show all install packages in your system
 `adb shell pm list packages \| findstr <OEM/Carrier/App Name>` <br>or<br> `adb shell pm list packages \| grep <OEM/Carrier/App Name>` | adb show app list under a specific packages
+`adb shell monkey -p <app_name_from_adb_packages> -c android.intent.category.LAUNCHER 1` |  Force to stop Application using ADB
+`adb shell am force-stop <app_name_from_adb_packages>` |  Force to stop Application using ADB
 `adb shell getprop` | get connected system properties
 `adb shell getprop ro.build.version.release`| Get Device Android version
 `adb shell getprop ro.build.version.sdk`| Get Device SDK version
