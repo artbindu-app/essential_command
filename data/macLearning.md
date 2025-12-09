@@ -76,7 +76,7 @@
 `mkdir <path>/<directory_name>`  | Create DIrectory
 `rm -Rf <path>/<directory_name>` | Delete Directory
 `` | Copy Directory
-`` | Move Directory
-`` | Rename Directory
+`mv <source_path_with_dir_name> <destination_path_with_dir_name>` | Move Directory
+`mv old_dir_name new_dir_name` | Rename Directory
 
 
