@@ -20,6 +20,7 @@ Command | Description
 `adb start-server` | adb restart server
 `adb tcp <tcp port>` | Reset tcp port: 5555 (default)
 `adb usb` | Restarting the USB Mode
+`adb reboot` | reboot connected device
 `adb logcat` | show device log
 `adb logcat -c` | clear all logs in adb terminal
 `adb logcat > <fileName>.<extension>` | store device log into a file
