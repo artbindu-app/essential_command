@@ -1,0 +1,28 @@
+<!-- # Kepler related commands -->
+
+## Kepler Learning
+
+### ADB Powerful command
+
+Command | Description
+------- | --------
+MY FIRE TV → Developer Options → Enable DEV Mode| Enable Dev Mode
+`/Users/Biswasindhu.Mandal/kepler/sdk/0.20.3719/bin/tools` | Kepler SDK Path
+`kepler --version` | View kepler version
+`kepler device list` | Kepler Device List
+`kepler exec vda connect <ip>:<port>` | connect devices through ip (default port: 5555) <br> `kepler exec vda connect 172.26.88.74:5555`
+`kepler exec vda connect <device_id>` | connect devices through USB
+`kepler exec vda start-server` | Kepler Device Start Server
+`kepler exec vda kill-server` | Kepler Device Kill Server
+`kepler exec vda reboot` | Kepler Device Reboot
+`kepler exec vda usb` | Kepler Device Restart USB Mode
+`kepler device installed-apps --device 172.26.88.74:5555` | View all installed apps in device
+`kepler device launch-app -a <app_name_from_kepler_packages>` | Launch app from device
+`kepler device uninstall-app --appId <app_name_from_kepler_packages>` | Uninstall app from device
+`kepler shell` + `↵` + `echo $SHELL` | get current shell (if `kepler shell getprop` not work)
+`kepler shell` + `↵` + `whoami` | get current user (if `kepler shell getprop` not work)
+`kepler shell` + `↵` + `printenv` + `↵` + `echo $PATH` | get environment variable & path (if `kepler shell getprop` not work)
+`kepler shell` + `↵` + `uname -a` | System details (if `kepler shell getprop` not work)
+`rm *.vpkg` | Delete File
+`rmdir foldername` | Delete Directory
+
