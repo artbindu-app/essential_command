@@ -7,7 +7,7 @@
 Command | Description
 ------- | --------
 MY FIRE TV → Developer Options → Enable DEV Mode| Enable Dev Mode
-`/Users/Biswasindhu.Mandal/kepler/sdk/0.20.3719/bin/tools` | Kepler SDK Path
+`/Users/<user.name>/kepler/sdk/<sdk_version>/bin/tools` | Kepler SDK Path: `/Users/Biswasindhu.Mandal/kepler/sdk/0.20.3719/bin/tools`
 `kepler --version` | View kepler version
 `kepler device list` | Kepler Device List
 `kepler exec vda connect <ip>:<port>` | connect devices through ip (default port: 5555) <br> `kepler exec vda connect 172.26.88.74:5555`
