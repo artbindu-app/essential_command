@@ -5,11 +5,13 @@
 ### ADB Powerful command
 
 Install the Kepler SDK
+
 Step | Command | Description
 ---- | ------- | -----------
 1 | `curl -o kepler-sdk.tar.gz https://kepler-sdk.s3.amazonaws.com/kepler-sdk-0.20.3719.tar.gz` | Download Kepler SDK
 2 | `tar -xzf kepler-sdk.tar.gz -C /Users/<user.name>/kepler/sdk/` | Extract Kepler SDK to `/Users/<user.name>/kepler/sdk/` (Mac)
 3 | `rm kepler-sdk.tar.gz` | Remove the downloaded tar.gz file
+
 
 Command | Description
 ------- | --------
@@ -17,7 +19,7 @@ SETTING → My Fire TV → About (Press 7 times to enable Developer Options) | E
 SETTING → My Fire TV → Developer Options → Enable DEV Mode| Enable Dev Mode
 `/Users/<user.name>/kepler/sdk/<sdk_version>/bin/tools` | Kepler SDK Path: `/Users/Biswasindhu.Mandal/kepler/sdk/0.20.3719/bin/tools`
 `kepler --version` | View kepler version
-`export KEPLER_SDK_PATH=/Users/Biswasindhu.Mandal/kepler/sdk/0.20.3719`<br>`export PATH=$KEPLER_SDK_PATH/bin:$PATH`<br>`export PATH=$KEPLER_SDK_PATH/bin/tools:$PATH`<br>`kepler exec vda` | Set Kepler Environment Variable (Mac)
+`export KEPLER_SDK_PATH=/Users/Biswasindhu.Mandal/kepler/sdk/0.20.3719 && export PATH=$KEPLER_SDK_PATH/bin:$PATH && export PATH=$KEPLER_SDK_PATH/bin/tools:$PATH && kepler exec vda` | Set Kepler Environment Variable (Mac)
 `kepler help` | Kepler Help
 `kepler device list` | Kepler Device List
 `kepler exec vda connect <ip>:<port>` | connect devices through ip (default port: 5555) <br> `kepler exec vda connect 172.26.88.74:5555`
