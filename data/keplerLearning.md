@@ -30,7 +30,8 @@ SETTING → My Fire TV → Developer Options → Enable DEV Mode| Enable Dev Mod
 `kepler exec vda reconnect device ` | Kepler Device Reconnect specific device
 `kepler exec vda reboot` | Kepler Device Reboot
 `kepler exec vda usb` | Kepler Device Restart USB Mode
-`kepler exec vda tcpip` | Kepler Device Restart TCP/IP Mode
+`kepler exec vda tcpip 5555` | Kepler Device Restart TCP/IP Mode
+`kepler exec vda devices` | Kepler Device List
 `kepler exec vda root` | Restart vdad with root permission
 `kepler exec vda unroot` | Restart vdad without root permission
 `kepler device install-app --packagePath <app_name_from_local_directory>.vpkg` | Install app from local package file
@@ -38,10 +39,12 @@ SETTING → My Fire TV → Developer Options → Enable DEV Mode| Enable Dev Mod
 `kepler device installed-apps --device 172.26.88.74:5555 \| grep -Ei '^au\.com\.'` | View all installed apps in device with package name start with `au.com.` (Case-insensitive)
 `kepler device launch-app -a <app_name_from_kepler_packages>` | Launch app from device
 `kepler device uninstall-app --appId <app_name_from_kepler_packages>` | Uninstall app from device
-`kepler shell` + `↵` + `echo $SHELL` | get current shell (if `kepler shell getprop` not work)
-`kepler shell` + `↵` + `whoami` | get current user (if `kepler shell getprop` not work)
-`kepler shell` + `↵` + `printenv` + `↵` + `echo $PATH` | get environment variable & path (if `kepler shell getprop` not work)
-`kepler shell` + `↵` + `uname -a` | System details (if `kepler shell getprop` not work)
+`vda forward tcp:9229 tcp:9229` | Chrome Inspect: debug/inspect the webview
+`kepler exec vda shell` | Open Shell in device
+`kepler exec vda shell` + `↵` + `echo $SHELL` | get current shell (if `kepler exec vda shell getprop` not work)
+`kepler exec vda shell` + `↵` + `whoami` | get current user (if `kepler exec vda shell getprop` not work)
+`kepler exec vda shell` + `↵` + `printenv` + `↵` + `echo $PATH` | get environment variable & path (if `kepler exec vda shell getprop` not work)
+`kepler exec vda shell` + `↵` + `uname -a` | System details (if `kepler exec vda shell getprop` not work)
 `open /Users/<user.name>/.kepler/logs` | Open Kepler Logs
 `rm *.vpkg` | Delete File
 `rmdir foldername` | Delete Directory
