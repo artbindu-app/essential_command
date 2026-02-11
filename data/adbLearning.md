@@ -31,9 +31,10 @@ Command | Description
 `adb shell pm uninstall -k --user 0 <package name>` | Forcefully uninstall
 `adb -s <device_id/only_ip> reboot` | restart device through adb
 `adb shell pm list packages` | Show all install packages in your system
-`adb -s 172.26.94.164:5555 shell pm list packages \| grep -Ei '\.(google\|amazone)\.'` | Show all install packages in your system with specific keyword (google or amazone) (Case-insensitive)
+`adb -s <device_id/only_ip> shell pm list packages \| grep -Ei '\.(google\|amazone)\.'` | Show all install packages in your system with specific keyword (google or amazone) (Case-insensitive)
 `adb shell pm list packages \| findstr <OEM/Carrier/App Name>` <br>or<br> `adb shell pm list packages \| grep <OEM/Carrier/App Name>` | adb show app list under a specific packages
-`adb shell monkey -p <app_name_from_adb_packages> -c android.intent.category.LAUNCHER 1` |  Force to stop Application using ADB
+`adb shell monkey -p <app_name_from_adb_packages> -c android.intent.category.LAUNCHER 1` |  Force to lauch Application using ADB
+`adb -s <device_id/only_ip> shell monkey -p com.dazn.beta -c android.intent.category.LAUNCHER 1` | Force to lauch Application using ADB for specific device
 `adb shell am force-stop <app_name_from_adb_packages>` |  Force to stop Application using ADB
 `adb shell getprop` | get connected system properties
 `adb shell getprop ro.build.version.release`| Get Device Android version
