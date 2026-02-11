@@ -36,7 +36,7 @@ SETTING → My Fire TV → Developer Options → Enable DEV Mode| Enable Dev Mod
 `kepler exec vda unroot` | Restart vdad without root permission
 `kepler device install-app --packagePath <app_name_from_local_directory>.vpkg` | Install app from local package file
 `kepler device installed-apps --device 172.26.88.74:5555` | View all installed apps in device
-`kepler device installed-apps --device 172.26.88.74:5555 \| grep -Ei '^au\.com\.'` | View all installed apps in device with package name start with `au.com.` (Case-insensitive)
+`kepler device installed-apps --device 172.26.88.74:5555 \| grep -Ei '\.(google\|amazone)\.'` | Show all install packages in your system with specific keyword (google or amazone) (Case-insensitive)
 `kepler device launch-app -a <app_name_from_kepler_packages>` | Launch app from device
 `kepler device uninstall-app --appId <app_name_from_kepler_packages>` | Uninstall app from device
 `vda forward tcp:9229 tcp:9229` | Chrome Inspect: debug/inspect the webview
