@@ -33,6 +33,7 @@ SETTING → My Fire TV → Developer Options → Enable DEV Mode| Enable Dev Mod
 `kepler exec vda tcpip` | Kepler Device Restart TCP/IP Mode
 `kepler exec vda root` | Restart vdad with root permission
 `kepler exec vda unroot` | Restart vdad without root permission
+`kepler device install-app --packagePath <app_name_from_local_directory>.vpkg` | Install app from local package file
 `kepler device installed-apps --device 172.26.88.74:5555` | View all installed apps in device
 `kepler device launch-app -a <app_name_from_kepler_packages>` | Launch app from device
 `kepler device uninstall-app --appId <app_name_from_kepler_packages>` | Uninstall app from device
