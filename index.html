@@ -65,11 +65,11 @@
             src="https://cdn.simpleicons.org/android/green" />
           Adb</a>
       </li>
-      <li><a href="#kepler">
+      <!-- <li><a href="#kepler">
           <img align="center" width="20px" style="padding:5px;" 
             src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/amazonfiretv.svg" />
           Kepler</a>
-      </li>
+      </li> -->
       <li><a href="#docker">
           <img align="center" width="20px" style="padding:5px;" 
             src="https://cdn.simpleicons.org/docker" />
@@ -183,23 +183,17 @@
 
     // Show default active option after refresh/first-reload
     var listItems = document.querySelectorAll('#myList li');
-    var cUrl = window.location.href;
-    var urlKey = cUrl.match(/(?<=\#)[a-z\-]+/gi);
-    if (urlKey) {
-      listItems.forEach((ele, index) => {
-        if (ele.textContent.match(/[a-z\-]+/gi).toString().toLowerCase() === urlKey.toString().toLowerCase()) {
-          var activeOption = ele.textContent ? ele.textContent.replace(/\s+/g, '') : '';
-          console.log('Active option: [Default] ' + activeOption);
-          listItems[index].classList.add('active')
-          showData(activeOption);
-          return;
-        }
-      });
-    } else {
-      var activeOption = listItems[0].textContent ? listItems[0].textContent.replace(/\s+/g, '') : '';
-      console.log('Active option: [Default] ' + activeOption);
-      listItems[0].classList.add('active')
-      showData(activeOption);
+    var urlKey = window.location.hash ? window.location.hash.substring(1).toLowerCase() : '';
+    var firstLink = listItems[0] ? listItems[0].querySelector('a') : null;
+    var defaultOption = firstLink && firstLink.hash ? firstLink.hash.substring(1) : 'windows';
+    var activeOption = urlKey || defaultOption;
+
+    console.log('Active option: [Default] ' + activeOption);
+    showData(activeOption);
+
+    var activeLink = document.querySelector('#myList a[href="#' + activeOption + '"]');
+    if (activeLink && activeLink.parentElement) {
+      activeLink.parentElement.classList.add('active');
     }
       
 
@@ -213,8 +207,11 @@
         // Add active class to the clicked li element
         this.classList.add('active');
 
-        // Get the text of the active li element
-        activeOption = this.textContent ? this.textContent.replace(/\s+/g, '') : '';
+        // Get key from href hash (fallback to li text)
+        var link = this.querySelector('a');
+        activeOption = link && link.hash
+          ? link.hash.substring(1)
+          : (this.textContent ? this.textContent.replace(/\s+/g, '') : '');
         console.log('Active option: [onClick] ' + activeOption);
         showData(activeOption);
       });

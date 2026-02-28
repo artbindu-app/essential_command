@@ -50,6 +50,7 @@ Create test file 'videoList.txt' with info as : `file input1.mp4 ↵ file input2
 `ffmpeg -codecs | grep 'V'` |  Supported video only codecs
 `ffmpeg -codecs | grep 'A'` | Supported audio only codecs
 `ffmpeg -f concat -safe 0 -i list.txt -c:v libx264 -c:a aac merged.mp4` | If clips differ slightly, re-encode during merge
+`ffmpeg -i Bulbuli_Sanzida_Nandita.mp3 -af " equalizer=f=150:width_type=h:width=150:g=-8, equalizer=f=1000:width_type=h:width=2000:g=5, equalizer=f=8000:width_type=h:width=3000:g=-6 " output_voice_up.mp3` | Boost Vocal Frequencies
 
 
 <!--
