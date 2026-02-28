@@ -16,6 +16,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.2.10/webcomponents-loader.min.js"></script>
   <script type="module" src="./src/index.js"></script>
+  <script src="./src/config.js"></script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66946548-3"></script>
   <script>
@@ -23,12 +24,6 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'UA-66946548-3');
-    window.onload = (event) => {
-      setTimeout(() => {
-        // document.getElementsByClassName("content")[0].style.backgroundColor = 'red';
-        document.getElementsByClassName("content")[0].style.width = `${Math.ceil(window.innerWidth * 50 / 100)}px`;
-      }, 500);
-    }
   </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -64,11 +59,11 @@
           <img align="center" width="20px" src="https://cdn.simpleicons.org/android/green" />
           <span class="nav-title">Adb</span></a>
       </li>
-      <!-- <li><a href="#kepler">
+      <li><a href="#kepler">
           <img align="center" width="20px" style="padding:5px;" 
             src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/amazonfiretv.svg" />
-          Kepler</a>
-      </li> -->
+         <span class="nav-title">Kepler</span></a>
+      </li>
       <li><a href="#docker">
           <img align="center" width="20px" src="https://cdn.simpleicons.org/docker" />
           <span class="nav-title">Docker</span></a>
@@ -88,7 +83,7 @@
       <li><a href="#powershell">
           <img align="center" width="20px" src="https://cdn.worldvectorlogo.com/logos/powershell.svg" />
           <span class="nav-title">Power Shell</span></a>
-      </li>
+      </li> -->
       <li><a href="#database">
           <img align="center" width="20px" src="https://cdn.worldvectorlogo.com/logos/amazon-database.svg" />
           <span class="nav-title">Database</span></a>
@@ -96,7 +91,7 @@
       <li><a href="#plpgsql">
           <img align="center" width="20px" src="https://cdn.simpleicons.org/postgresql/sky" />
           <span class="nav-title">PLpgSQL</span></a>
-      </li> -->
+      </li>
     </ul>
     <div class="page-header">
       <h1 class="header-title"><span class="msg">Windows Popular Command</span></h1>
@@ -150,29 +145,54 @@
     </div>
   </main>
   <script>
-    var msgData = {
-      windows: 'Windows CMD Commands',
-      linux: 'Linux Terminal Commands',
-      macos: 'MacOs Terminal Commands',
-      windows_it: 'Windows IT CMD Commands',
-      git: 'Git Basic Commands',
-      adb: 'ADB Basic Commands',
-      kepler: 'Kepler Basic Commands',
-      docker: 'Docker Basic Commands',
-      ffmpeg: 'FFmpeg Script',
-      database: 'Database Basic Learning',
-      shellscript: 'Shell Script Commands',
-      batchscript: 'Batch Script Commands',
-      powershell: 'Powershell Scripting Commands',
-      plpgsql: 'PL/pgSQL Commands',
-      about: "About"
+    (function markWebViewMode() {
+      var ua = navigator.userAgent || '';
+      var isEmbedded = window.self !== window.top;
+      var isAndroidWebView = /\bwv\b/.test(ua) || /; wv\)/.test(ua) || /WebView/i.test(ua);
+      if (isEmbedded || isAndroidWebView) {
+        document.documentElement.classList.add('webview-mode');
+      }
+    })();
+
+    var appConfig = window.APP_CONFIG || {};
+
+    var webviewNavConfig = {
+      hiddenHashes: appConfig.webviewNav && Array.isArray(appConfig.webviewNav.hiddenHashes)
+        ? appConfig.webviewNav.hiddenHashes
+        : []
     };
+
+    function applyWebviewNavConfig() {
+      var isMobileView = window.matchMedia('(max-width: 768px)').matches;
+      var hiddenSet = new Set((webviewNavConfig.hiddenHashes || []).map(function (item) {
+        return String(item || '').toLowerCase();
+      }));
+
+      var navItems = document.querySelectorAll('#myList li');
+      navItems.forEach(function (li) {
+        var link = li.querySelector('a[href^="#"]');
+        if (!link) {
+          return;
+        }
+
+        var hash = (link.getAttribute('href') || '').toLowerCase();
+        var shouldHide = hiddenSet.has(hash) && !isMobileView;
+        li.style.display = shouldHide ? 'none' : '';
+      });
+    }
+
+    applyWebviewNavConfig();
+    window.addEventListener('resize', applyWebviewNavConfig);
+
+    var msgData = appConfig.messages || {};
 
     // Show default active option after refresh/first-reload
     var listItems = document.querySelectorAll('#myList li');
     var urlKey = window.location.hash ? window.location.hash.substring(1).toLowerCase() : '';
     var firstLink = listItems[0] ? listItems[0].querySelector('a') : null;
-    var defaultOption = firstLink && firstLink.hash ? firstLink.hash.substring(1) : 'windows';
+    var defaultHash = typeof appConfig.defaultHash === 'string' ? appConfig.defaultHash : '#windows';
+    var defaultOption = defaultHash.replace(/^#/, '').toLowerCase()
+      || (firstLink && firstLink.hash ? firstLink.hash.substring(1) : 'windows');
     var activeOption = urlKey || defaultOption;
 
     console.log('Active option: [Default] ' + activeOption);
@@ -214,7 +234,7 @@
 
     function showHeaderMessage(msg) {
       msg = msg ? msg.toLowerCase().replace(/\-/g, '_') : 'about';
-      document.getElementsByClassName("msg")[0].innerHTML = msgData[msg];
+      document.getElementsByClassName("msg")[0].innerHTML = msgData[msg] || msgData.about || 'About';
     }
   </script>
 </body>

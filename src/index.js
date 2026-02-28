@@ -154,7 +154,7 @@
          * position:relative;contain:content;
          * Above configuration float the .md files data on page header
          **/
-        let start = '<style class="markdown-style">:host{display:block;position:inherit;contain:inherit;}';
+        let start = '<style class="markdown-style">:host{display:block;position:inherit;contain:inherit;}.markdown-body table{margin-left:auto;margin-right:auto;}';
         let end = '</style>';
         // First try reading from light DOM template
         let tpl = this.querySelector('template') && this.querySelector('template').content.querySelector('style') || false;
