@@ -10,11 +10,13 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="canonical" href="https://zerodevx.github.io/zero-md/">
   <meta name="description" content="essential-command">
-  <meta name="keywords" content="git, adb, adb-commands, cmd, linux-commands, windows-cmd, windows-commands, git-commands, mac-commands, it-commands, database, sql, plpgsql, plsql, sql-query">
+  <meta name="keywords"
+    content="git, adb, adb-commands, cmd, linux-commands, windows-cmd, windows-commands, git-commands, mac-commands, it-commands, database, sql, plpgsql, plsql, sql-query">
   <meta name="robots" content="INDEX, FOLLOW">
 
   <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.2.10/webcomponents-loader.min.js"></script>
   <script type="module" src="./src/index.js"></script>
+  <script src="./src/config.js"></script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66946548-3"></script>
   <script>
@@ -22,99 +24,80 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'UA-66946548-3');
-    window.onload= (event) => {
-      setTimeout(() => {
-        // document.getElementsByClassName("content")[0].style.backgroundColor = 'red';
-        document.getElementsByClassName("content")[0].style.width = `${Math.ceil(window.innerWidth*50/100)}px`;
-      }, 500);
-    }
   </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <div class="fixed-div">
+  <header class="fixed-div">
     <ul id="myList">
+      <li class="about-link"><a href="#about">
+          <img align="center" src="https://artbindu-app.github.io/whoami/favicon.ico" height="25px">
+          <span class="nav-title">About</span></a>
+      </li>
       <li><a href="#windows">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg" />
-          Windows</a>
+          <img align="center" width="20px" src="https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg" />
+          <span class="nav-title">Windows</span></a>
       </li>
       <li><a href="#windows-it">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.worldvectorlogo.com/logos/terminal-1.svg" />
-          Windows-IT</a>
+          <img align="center" width="20px" src="https://cdn.worldvectorlogo.com/logos/terminal-1.svg" />
+          <span class="nav-title">Windows-IT</span></a>
       </li>
       <li><a href="#linux">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.simpleicons.org/linux" />
-          Linux</a>
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/linux" />
+          <span class="nav-title">Linux</span></a>
       </li>
       <li><a href="#macos">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.simpleicons.org/apple/white" />
-          MacOs</a>
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/apple/white" />
+          <span class="nav-title">MacOs</span></a>
       </li>
       <li><a href="#git">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.simpleicons.org/git/red" />
-          Git</a>
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/git/F1502F" />
+          <span class="nav-title">Git</span></a>
       </li>
       <li><a href="#adb">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.simpleicons.org/android/green" />
-          Adb</a>
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/android/green" />
+          <span class="nav-title">Adb</span></a>
       </li>
-      <!-- <li><a href="#kepler">
+      <li><a href="#kepler">
           <img align="center" width="20px" style="padding:5px;" 
             src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/amazonfiretv.svg" />
-          Kepler</a>
-      </li> -->
+         <span class="nav-title">Kepler</span></a>
+      </li>
       <li><a href="#docker">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.simpleicons.org/docker" />
-          Docker</a>
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/docker" />
+          <span class="nav-title">Docker</span></a>
       </li>
       <li><a href="#ffmpeg">
-          <img align="center" width="20px" style="padding:5px;" 
-            src="https://cdn.simpleicons.org/ffmpeg" />
-          FFmpeg</a>
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/ffmpeg" />
+          <span class="nav-title">FFmpeg</span></a>
       </li>
       <!-- <li><a href="#shellscript">
-          <img align="center" width="20px" style="padding:5px;" src="https://cdn.simpleicons.org/gnubash/white" />
-          Shell Script</a>
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/gnubash/white" />
+          <span class="nav-title">Shell Script</span></a>
+      </li>
+      <li><a href="#batchscript">
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/gnubash/white" />
+          <span class="nav-title">Batch Script</span></a>
+      </li>
+      <li><a href="#powershell">
+          <img align="center" width="20px" src="https://cdn.worldvectorlogo.com/logos/powershell.svg" />
+          <span class="nav-title">Power Shell</span></a>
       </li> -->
-      <!-- <li><a href="#batchscript">
-          <img align="center" width="20px" style="padding:5px;" src="https://cdn.simpleicons.org/gnubash/white" />
-          Batch Script</a>
-      </li> -->
-      <!-- <li><a href="#powershell">
-        <img align="center" width="20px" style="padding:5px;" src="https://cdn.simpleicons.org/powershell" />
-        Power Shell</a>
-      </li> -->
-      <!-- <li><a href="#database">
-          <img align="center" width="20px" style="padding:5px;" src="https://cdn.simpleicons.org/amazondocumentdb" />
-          Database</a>
-      </li>  -->
-      <!-- <li><a href="#plpgsql">
-        <img align="center" width="20px" style="padding:5px;" src="https://cdn.simpleicons.org/postgresql/sky" />
-        PLpgSQL</a>
-      </li>  -->
-      <!-- <li style="float:right"><a href="#about">About</a></li> -->
-      <li style="float:right"><a href="#about">
-          <img align="center" src="https://artbindu-app.github.io/whoami/favicon.ico" height="25px"
-            style="padding:5px;">About</a>
+      <li><a href="#database">
+          <img align="center" width="20px" src="https://cdn.worldvectorlogo.com/logos/amazon-database.svg" />
+          <span class="nav-title">Database</span></a>
+      </li>
+      <li><a href="#plpgsql">
+          <img align="center" width="20px" src="https://cdn.simpleicons.org/postgresql/sky" />
+          <span class="nav-title">PLpgSQL</span></a>
       </li>
     </ul>
-    <header class="page-header">
-      <h1><u>
-          <div class="msg">Windows Popular Command</div>
-        </u></h1>
-    </header>
-    <!-- Your fixed div content goes here -->
-  </div>
-
-  <div class="content" id="showData">
+    <div class="page-header">
+      <h1 class="header-title"><span class="msg">Windows Popular Command</span></h1>
+    </div>
+  </header>
+  <main class="content" id="showData">
     <div class="windows">
       <zero-md class="app" src="./data/cmdLearning.md"></zero-md>
     </div>
@@ -160,32 +143,56 @@
     <div class="ffmpeg">
       <zero-md class="app" src="./data/ffmpeg.md"></zero-md>
     </div>
-  </div>
-
+  </main>
   <script>
-    var msgData = {
-      windows: 'Windows CMD Commands',
-      linux: 'Linux Terminal Commands',
-      macos: 'MacOs Terminal Commands',
-      windows_it: 'Windows IT CMD Commands',
-      git: 'Git Basic Commands',
-      adb: 'ADB Basic Commands',
-      kepler: 'Kepler Basic Commands',
-      docker: 'Docker Basic Commands',
-      ffmpeg: 'FFmpeg Script',
-      database: 'Database Basic Learning',
-      shellscript: 'Shell Script Commands',
-      batchscript: 'Batch Script Commands',
-      powershell: 'Powershell Scripting Commands',
-      plpgsql: 'PL/pgSQL Commands',
-      about: "About"
+    (function markWebViewMode() {
+      var ua = navigator.userAgent || '';
+      var isEmbedded = window.self !== window.top;
+      var isAndroidWebView = /\bwv\b/.test(ua) || /; wv\)/.test(ua) || /WebView/i.test(ua);
+      if (isEmbedded || isAndroidWebView) {
+        document.documentElement.classList.add('webview-mode');
+      }
+    })();
+
+    var appConfig = window.APP_CONFIG || {};
+
+    var webviewNavConfig = {
+      hiddenHashes: appConfig.webviewNav && Array.isArray(appConfig.webviewNav.hiddenHashes)
+        ? appConfig.webviewNav.hiddenHashes
+        : []
     };
+
+    function applyWebviewNavConfig() {
+      var isMobileView = window.matchMedia('(max-width: 768px)').matches;
+      var hiddenSet = new Set((webviewNavConfig.hiddenHashes || []).map(function (item) {
+        return String(item || '').toLowerCase();
+      }));
+
+      var navItems = document.querySelectorAll('#myList li');
+      navItems.forEach(function (li) {
+        var link = li.querySelector('a[href^="#"]');
+        if (!link) {
+          return;
+        }
+
+        var hash = (link.getAttribute('href') || '').toLowerCase();
+        var shouldHide = hiddenSet.has(hash) && !isMobileView;
+        li.style.display = shouldHide ? 'none' : '';
+      });
+    }
+
+    applyWebviewNavConfig();
+    window.addEventListener('resize', applyWebviewNavConfig);
+
+    var msgData = appConfig.messages || {};
 
     // Show default active option after refresh/first-reload
     var listItems = document.querySelectorAll('#myList li');
     var urlKey = window.location.hash ? window.location.hash.substring(1).toLowerCase() : '';
     var firstLink = listItems[0] ? listItems[0].querySelector('a') : null;
-    var defaultOption = firstLink && firstLink.hash ? firstLink.hash.substring(1) : 'windows';
+    var defaultHash = typeof appConfig.defaultHash === 'string' ? appConfig.defaultHash : '#windows';
+    var defaultOption = defaultHash.replace(/^#/, '').toLowerCase()
+      || (firstLink && firstLink.hash ? firstLink.hash.substring(1) : 'windows');
     var activeOption = urlKey || defaultOption;
 
     console.log('Active option: [Default] ' + activeOption);
@@ -195,7 +202,6 @@
     if (activeLink && activeLink.parentElement) {
       activeLink.parentElement.classList.add('active');
     }
-      
 
     listItems.forEach(function (item) {
       item.addEventListener('click', function () {
@@ -219,15 +225,16 @@
 
     function showData(activeOption) {
       showHeaderMessage(activeOption);
-      var showData = document.querySelectorAll('#showData div');
-      showData.forEach(function (item) {
-        item.style.display = item.className.toLowerCase() === activeOption.toLowerCase() ? "block" : "none";
+      var contentSections = document.querySelectorAll('#showData > div');
+      var selectedKey = activeOption ? activeOption.toLowerCase() : '';
+      contentSections.forEach(function (item) {
+        item.style.display = item.classList.contains(selectedKey) ? "block" : "none";
       });
     }
 
     function showHeaderMessage(msg) {
       msg = msg ? msg.toLowerCase().replace(/\-/g, '_') : 'about';
-      document.getElementsByClassName("msg")[0].innerHTML = msgData[msg];
+      document.getElementsByClassName("msg")[0].innerHTML = msgData[msg] || msgData.about || 'About';
     }
   </script>
 </body>
