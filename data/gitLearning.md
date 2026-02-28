@@ -32,8 +32,8 @@ Command | description
 `git remote rename origin <new_branch_name>` | Rename the origin remote to new_branch_name  
 `git remote prune origin` <br>or<br> `git fetch --prune`| Remove all deleted branches from remote
 **`7. Revert, Reset or Clean your changes or directory`** | 
-`git revert HEAD` | revert the last changes
-`git revert HEAD --no-edit` | revert the latest commit
+`git revert HEAD && git push` | revert the last changes
+`git revert HEAD --no-edit && git push` | revert the latest commit
 `git revert HEAD~1` | revert last two commits
 `git reset` | discard local change 	 
 `git reset --hard` | discard everything permanently<br>not delete new creating file

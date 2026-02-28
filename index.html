@@ -64,6 +64,11 @@
           <img align="center" width="20px" src="https://cdn.simpleicons.org/android/green" />
           <span class="nav-title">Adb</span></a>
       </li>
+      <!-- <li><a href="#kepler">
+          <img align="center" width="20px" style="padding:5px;" 
+            src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/amazonfiretv.svg" />
+          Kepler</a>
+      </li> -->
       <li><a href="#docker">
           <img align="center" width="20px" src="https://cdn.simpleicons.org/docker" />
           <span class="nav-title">Docker</span></a>
@@ -116,6 +121,9 @@
     <div class="adb">
       <zero-md class="app" src="./data/adbLearning.md"></zero-md>
     </div>
+    <div class="kepler">
+      <zero-md class="app" src="./data/keplerLearning.md"></zero-md>
+    </div>
     <div class="docker">
       <zero-md class="app" src="./data/docker.md"></zero-md>
     </div>
@@ -149,6 +157,7 @@
       windows_it: 'Windows IT CMD Commands',
       git: 'Git Basic Commands',
       adb: 'ADB Basic Commands',
+      kepler: 'Kepler Basic Commands',
       docker: 'Docker Basic Commands',
       ffmpeg: 'FFmpeg Script',
       database: 'Database Basic Learning',
@@ -161,35 +170,17 @@
 
     // Show default active option after refresh/first-reload
     var listItems = document.querySelectorAll('#myList li');
-    var cUrl = window.location.href;
-    var urlKey = cUrl.match(/(?<=\#)[a-z\-]+/gi);
-    if (urlKey) {
-      listItems.forEach((ele, index) => {
-        if (ele.textContent.match(/[a-z\-]+/gi).toString().toLowerCase() === urlKey.toString().toLowerCase()) {
-          var activeOption = ele.textContent ? ele.textContent.replace(/\s+/g, '') : '';
-          console.log('Active option: [Default] ' + activeOption);
-          listItems[index].classList.add('active')
-          showData(activeOption);
-          return;
-        }
-      });
-    } else {
-      // Set default to #windows
-      let defaultFound = false;
-      listItems.forEach((ele, index) => {
-        if (ele.querySelector('a') && ele.querySelector('a').getAttribute('href') === '#windows') {
-          var activeOption = ele.textContent ? ele.textContent.replace(/\s+/g, '') : '';
-          console.log('Active option: [Default] ' + activeOption);
-          ele.classList.add('active');
-          showData(activeOption);
-          defaultFound = true;
-        }
-      });
-      if (!defaultFound) {
-        var activeOption = listItems[0].textContent ? listItems[0].textContent.replace(/\s+/g, '') : '';
-        listItems[0].classList.add('active');
-        showData(activeOption);
-      }
+    var urlKey = window.location.hash ? window.location.hash.substring(1).toLowerCase() : '';
+    var firstLink = listItems[0] ? listItems[0].querySelector('a') : null;
+    var defaultOption = firstLink && firstLink.hash ? firstLink.hash.substring(1) : 'windows';
+    var activeOption = urlKey || defaultOption;
+
+    console.log('Active option: [Default] ' + activeOption);
+    showData(activeOption);
+
+    var activeLink = document.querySelector('#myList a[href="#' + activeOption + '"]');
+    if (activeLink && activeLink.parentElement) {
+      activeLink.parentElement.classList.add('active');
     }
 
     listItems.forEach(function (item) {
@@ -202,8 +193,11 @@
         // Add active class to the clicked li element
         this.classList.add('active');
 
-        // Get the text of the active li element
-        activeOption = this.textContent ? this.textContent.replace(/\s+/g, '') : '';
+        // Get key from href hash (fallback to li text)
+        var link = this.querySelector('a');
+        activeOption = link && link.hash
+          ? link.hash.substring(1)
+          : (this.textContent ? this.textContent.replace(/\s+/g, '') : '');
         console.log('Active option: [onClick] ' + activeOption);
         showData(activeOption);
       });
@@ -211,9 +205,10 @@
 
     function showData(activeOption) {
       showHeaderMessage(activeOption);
-      var showData = document.querySelectorAll('#showData div');
-      showData.forEach(function (item) {
-        item.style.display = item.className.toLowerCase() === activeOption.toLowerCase() ? "block" : "none";
+      var contentSections = document.querySelectorAll('#showData > div');
+      var selectedKey = activeOption ? activeOption.toLowerCase() : '';
+      contentSections.forEach(function (item) {
+        item.style.display = item.classList.contains(selectedKey) ? "block" : "none";
       });
     }
 

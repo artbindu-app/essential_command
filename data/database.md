@@ -18,7 +18,7 @@ There are different type of database structures:
    It's table-oriented, where every bit of data is linked to every other bit of data.
 
 5. Non-relational or NoSQL database:
-   There are varity of format support in No-SQL database, such as documents, graphs, wide columns, etc., which offers excellent flexibility and scalability to a database design.
+   There are variety of format support in No-SQL database, such as documents, graphs, wide columns, etc., which offers excellent flexibility and scalability to a database design.
 
 ## Types of SQL Commands:
 - DDL – Data Definition Language <br>
@@ -69,7 +69,7 @@ List of DCL commands:<br>
     2. REVOKE: Withdraws the users access privileges given by using the GRANT command.<br>
 
 ### TCL (Rransaction Control language):
-Transaction group is a set of tasks in a single execution unit. Each transaction begins with a specific task and ends when all the taks in the group are succesfully completed.<br> 
+Transaction group is a set of tasks in a single execution unit. Each transaction begins with a specific task and ends when all the takes in the group are successfully completed.<br> 
 If any task fail, then whole transaction is failed. <br>
 Therefore, every transaction has only two results: 'Success' or 'Failure'.<br>
 
