@@ -1,7 +1,7 @@
 (function () {
   window.customElements.define('zero-md', class extends HTMLElement {
 
-    get version() { return 'v1.3.4'; }
+    get version() { return window.ZeroMd.config.version || 'v2.0.0'; }
     get src() { return this.getAttribute('src'); }
     get manualRender() { return this.hasAttribute('manual-render'); }
     get noShadow() { return this.hasAttribute('no-shadow'); }
@@ -16,10 +16,22 @@
       super();
       window.ZeroMd = window.ZeroMd || {};
       window.ZeroMd.config = window.ZeroMd.config || {};
+      window.ZeroMd.config.version = window.ZeroMd.config.version || 'v2.0.0';
       window.ZeroMd.config.markedUrl = window.ZeroMd.config.markedUrl || 'https://cdn.jsdelivr.net/npm/marked@0/marked.min.js';
       window.ZeroMd.config.prismUrl = window.ZeroMd.config.prismUrl || 'https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js';
       window.ZeroMd.config.cssUrls = window.ZeroMd.config.cssUrls || ['https://cdn.jsdelivr.net/npm/github-markdown-css@2/github-markdown.min.css', 'https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css'];
       window.ZeroMd.cache = window.ZeroMd.cache || {};
+
+      if (!window.ZeroMd.cache.versionPromise) {
+        window.ZeroMd.cache.versionPromise = fetch('./package.json')
+          .then(resp => resp.ok ? resp.json() : null)
+          .then(pkg => {
+            if (pkg && typeof pkg.version === 'string' && pkg.version.trim()) {
+              window.ZeroMd.config.version = pkg.version.trim();
+            }
+          })
+          .catch(() => { });
+      }
     }
 
     connectedCallback() {
