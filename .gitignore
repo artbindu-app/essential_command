@@ -4,5 +4,4 @@ index.html
 *.pdf
 .DS_Store
 /**/.DS_Store
-data/sampleVideo/dash
-data/sampleVideo/dash_latest
+!data/sampleVideo/*.sh
