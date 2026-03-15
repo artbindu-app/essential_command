@@ -10,6 +10,10 @@ AUDIO_DIR="$OUTPUT_DIR/audio"
 mkdir -p "$VIDEO_DIR"
 mkdir -p "$AUDIO_DIR"
 
+# Create media info JSON
+ffprobe -v quiet -print_format json -show_format -show_streams "$INPUT" > "$OUTPUT_DIR"/mediaInfo.json
+
+
 # Generate video HLS segments
 ffmpeg -i "$INPUT" \
 -map 0:v \
@@ -31,7 +35,7 @@ ffmpeg -i "$INPUT" \
 "$AUDIO_DIR/playlist.m3u8"
 
 # Create master playlist
-cat <<EOF > "$OUTPUT_DIR/master.m3u8"
+cat <<EOF > "$OUTPUT_DIR/manifest.m3u8"
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio",NAME="English",DEFAULT=YES,AUTOSELECT=YES,URI="audio/playlist.m3u8"

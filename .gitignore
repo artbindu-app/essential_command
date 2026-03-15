@@ -4,4 +4,6 @@ index.html
 *.pdf
 .DS_Store
 /**/.DS_Store
+data/sampleVideo/
 !data/sampleVideo/*.sh
+!data/sampleVideo/input.mp4
