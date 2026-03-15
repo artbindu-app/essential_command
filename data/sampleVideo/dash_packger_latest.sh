@@ -4,6 +4,7 @@ set -e
 
 INPUT="input.mp4"
 OUTPUT_DIR="dash_latest"
+SEGMENT_DURATION=6
 
 # Delete dash directory
 echo "Cleaning old DASH output..."
@@ -11,6 +12,7 @@ rm -rf "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_DIR"
 
 # Create representation folders (2 video + 1 audio)
+echo "Creating directories..."
 for i in 0 1 2; do
     mkdir -p "$OUTPUT_DIR/$i"
 done
@@ -32,7 +34,7 @@ ffmpeg -y -i "$INPUT" \
 -c:a aac -b:a 128k -ac 2 \
 -f dash \
 -streaming 1 \
--seg_duration 6 \
+-seg_duration $SEGMENT_DURATION \
 -use_template 1 \
 -use_timeline 1 \
 -init_seg_name "\$RepresentationID\$/init.m4s" \
