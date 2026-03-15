@@ -2,7 +2,7 @@
 
 set -e
 
-INPUT="RawVideo.mp4"
+INPUT="input.mp4"
 OUTPUT_DIR="dash_latest"
 
 # Delete dash directory

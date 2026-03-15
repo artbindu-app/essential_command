@@ -2,7 +2,7 @@
 
 set -e
 
-INPUT="RawVideo.mp4"
+INPUT="input.mp4"
 OUTPUT_DIR="dash"
 
 echo "Cleaning previous DASH output..."
