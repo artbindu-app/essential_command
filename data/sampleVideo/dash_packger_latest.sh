@@ -10,8 +10,8 @@ echo "Cleaning old DASH output..."
 rm -rf "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_DIR"
 
-# Create representation folders (4 video + 1 audio)
-for i in 0 1 2 3 4; do
+# Create representation folders (2 video + 1 audio)
+for i in 0 1 2; do
     mkdir -p "$OUTPUT_DIR/$i"
 done
 
@@ -21,18 +21,14 @@ ffprobe -v quiet -print_format json -show_format -show_streams "$INPUT" > "$OUTP
 # Start DASH packaging with multi-resolution encoding
 echo "Starting multi-resolution encoding..."
 ffmpeg -y -i "$INPUT" \
--filter_complex "[0:v]split=4[v1][v2][v3][v4]; \
-[v1]scale=1280:720[v720]; \
-[v2]scale=854:480[v480]; \
-[v3]scale=640:360[v360]; \
-[v4]scale=426:240[v240]" \
--map "[v720]" -map "[v480]" -map "[v360]" -map "[v240]" -map 0:a:0 \
+-filter_complex "[0:v]split=2[v1][v2]; \
+[v1]scale=1280:720,setsar=1[v720]; \
+[v2]scale=640:360,setsar=1[v360]" \
+-map "[v720]" -map "[v360]" -map 0:a:0 \
 -c:v libx264 -preset fast -profile:v main \
--g 48 -keyint_min 48 -sc_threshold 0 \
+-g 90 -keyint_min 90 -sc_threshold 0 \
 -b:v:0 3000k -maxrate:v:0 3200k -bufsize:v:0 4200k \
--b:v:1 1500k -maxrate:v:1 1600k -bufsize:v:1 2100k \
--b:v:2 800k  -maxrate:v:2 900k  -bufsize:v:2 1200k \
--b:v:3 400k  -maxrate:v:3 450k  -bufsize:v:3 600k \
+-b:v:1 800k  -maxrate:v:1 900k  -bufsize:v:1 1200k \
 -c:a aac -b:a 128k -ac 2 \
 -f dash \
 -streaming 1 \
