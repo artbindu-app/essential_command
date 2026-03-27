@@ -21,6 +21,7 @@
 `powercfg energy` | system full details including issues (.html file)
 `systeminfo` | Get SystemInformation
 `ipconfig /flushdns` | Clear all port (Need run in directory: `C:\Windows\System32`)
+`get-ciminstance win32_winsat` | (Run in Powershell), CPU Performance (> 8 - Gaming, High Performance)
 | 
 **`3. ping related config`**|
 `ping <ip>` <br> `ping <host>.<domain>` | check connect with that `host`
