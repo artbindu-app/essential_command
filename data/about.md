@@ -1,17 +1,30 @@
-<!-- # About -->
+<div align="center">
 
+## Essential Command {{APP_VERSION}}
 
-### This application used to help Keyboard shortcuts and Basic CMD commands for different OS.
-### This application used to help Learning Git, ADB, Batch & Shell Script.
-### It will help you to learning basic database information.
+Reference hub for everyday terminal commands, scripting basics, and quick technical notes.
 
-</br></br>
-<!-- <div style="margin:auto;padding:1px;max-width:70px">
-    <a href="https://github.com/artbindu" target="_blank"><img align="middle" src="https://artbindu-app.github.io/artbindu/favicon.ico"></a> -->
+<img src="https://img.shields.io/badge/Platform-Windows%20|%20Linux%20|%20macOS-1f6feb" alt="platform badge" />
+<img src="https://img.shields.io/badge/Focus-CMD%20%7C%20Git%20%7C%20ADB%20%7C%20Docker-0a7b83" alt="focus badge" />
+
 </div>
-</br></br>
 
-**Maintenance By: [<img width="15px" padding="1px" src="https://cdn.simpleicons.org/github/F81F7E"/>](https://github.com/artbindu) [Biswasindhu Mandal <img width="18px" padding="1px" src="./favicon.ico"/>](https://artbindu-app.github.io/whoami/index.html)** 
-&nbsp;&nbsp; 
+---
 
-**Supported By: [<img width="15px" backgroundColor="black" padding="1px" src="https://cdn.simpleicons.org/github/red"/>](https://github.com/SubhadeepGiri) Subhadeep Giri**<br>
+### What this project covers
+
+- Keyboard shortcuts and command-line basics for multiple operating systems
+- Core command references for CMD, Linux shell, and macOS terminal
+- Practical learning notes for Git, ADB, Docker, shell script, and batch script
+- Introductory database learning notes
+
+
+### Credits
+
+**Maintained by**  
+[<img width="15" src="https://cdn.simpleicons.org/github/F81F7E" alt="GitHub" />](https://github.com/artbindu)
+[Biswasindhu Mandal <img width="18" src="./favicon.ico" alt="Profile" />](https://artbindu-app.github.io/whoami/index.html)
+
+**Supported by**  
+[<img width="15" src="https://cdn.simpleicons.org/github/red" alt="GitHub" />](https://github.com/SubhadeepGiri)
+Subhadeep Giri

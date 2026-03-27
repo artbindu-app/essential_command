@@ -150,11 +150,15 @@
 
     _buildMd() {
       return new Promise((resolve, reject) => {
-        Promise.all([this._getInputs(),
+        Promise.all([
+        window.ZeroMd.cache.versionPromise || Promise.resolve(),
+        this._getInputs(),
         this._loadScript(this.markedUrl, typeof window.marked, 'zero-md-marked-ready', 'async'),
         this._loadScript(this.prismUrl, typeof window.Prism, 'zero-md-prism-ready', 'async', 'data-manual')])
           .then(data => {
-            resolve('<div class="markdown-body">' + window.marked(data[0], { highlight: this._prismHighlight.bind(this) }) + '</div>');
+            let markdown = data[1] || '';
+            markdown = markdown.replace(/\{\{\s*APP_VERSION\s*\}\}/g, this.version);
+            resolve('<div class="markdown-body">' + window.marked(markdown, { highlight: this._prismHighlight.bind(this) }) + '</div>');
           }, err => { reject(err); });
       });
     }
