@@ -13,6 +13,7 @@ Command | Description
 `ffmpeg -i input.mp4 -filter:a "volume=5dB" -c:v copy output.mp4` | Increase Volume by Decibels
 FFmpeg (Audio) | 
 `ffmpeg -i input.mp3 -ss 00:00:30 -t 30 -c copy output.mp3` | trim audio
+`ffmpeg -i input.mp4 -ss 00:00:00 -to 11:54:59 -q:a 0 -map a output.mp3` | trim audio from video
 FFmpeg (Video) | 
 ------- | --------
 `ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 input.mp4` | Show Video Frame

@@ -1,15 +1,17 @@
 <!-- # Docker Learning -->
-
 ## Docker Learning
 
 ### What is Docker?
+
 A platform that helps developers build, share & run applications with container.
 
 ### What is Docker Images and Containers?
+
 Images:- Are templates of Project
 Container:- Running Instance of Image
 
 #### Docker Images
+
 - It's kind of ready-to-use software read-only template
 - Images is made with source codes, libraries, external dependencies and tools.
 - Images can not be updated.
@@ -26,17 +28,20 @@ Container:- Running Instance of Image
 So, Docker Image is a template of our project.</br>
 
 #### Docker Containers
+
 - Container is a process that runs applicatin with images
 - Container is an isolated process
 - Means Container run independently on computer
 
 #### Docker Images Type
+
 Docker Image | description
 ------- | --------
 Parent Image  |   Not Depend on other Image like: [Node.js](https://hub.docker.com/_/node), [PHP](https://hub.docker.com/_/php), [Python](https://hub.docker.com/_/python)
 Base Image    |   Depend on Base Image. Example: React App required base image of 'Node.js'
 
 ### Basic Command of Docker
+
 Command | description
 ------- | --------
 help                | `docker -help`
@@ -62,7 +67,8 @@ View Other Docker Images Command    | `docker image COMMAND`
 View Other Docker Container Command | `docker container COMMAND`
 
 ### Docker File Sample
-```
+
+```sell
   # Pull Docker Image/s
   FROM <Docker Image Name>
   # Mention Project Destination if required
@@ -78,6 +84,7 @@ View Other Docker Container Command | `docker container COMMAND`
 ```
 
 #### What is Docker Compose File?
+
 Command | description
 ------- | --------
 Build Docker Image          | `docker-compose build`
@@ -88,7 +95,8 @@ Create Docker Image & Start Container    | `docker-compose build && docker-compo
 Rebuild Docker Image & restart Container | `docker-compose down && docker-compose build && docker-compose up -d`
 
 ### Docker Compose Sample File
-```
+
+```shell
   # Docker Services
   Services:
     # Docker Image Config
