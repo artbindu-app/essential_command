@@ -24,6 +24,7 @@ Command | description
 `git commit -m "<enter_message>"` | add your commit message 	 	 
 `git push origin master` | push at your original branch
 `git commit -am "<enter_message>"`| add your existing files changes & commit in a single time
+`git commit --amend -m "<add_new_commit_message>" && git push --force-with-lease` | Rename last commit
 `git add <filePath_with_Name_01>` | add your changes for particular file(s)
 `git push --set-upstream origin <branch_name>` | Create a new branch in remote repository and committed changes push into that branch. 
 **`6. Rename & Delete your branch`** | 
